@@ -105,7 +105,7 @@ namespace LojaVirtual
                                     }
                                     else
                                     {
-                                        Console.WriteLine("Quantidade inválida ou sem estoque suficiente.");
+                                        Console.WriteLine("Quantidade inválida ou sem estoque suficiente."); //Ronaldo 
                                     }
                                 }
                                 else

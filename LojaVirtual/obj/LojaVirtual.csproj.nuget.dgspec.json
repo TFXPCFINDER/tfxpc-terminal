@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Matheus\\Desktop\\LojaVirtual\\LojaVirtual\\LojaVirtual.csproj": {}
+    "C:\\Users\\Ronaldo\\Desktop\\tfxpc-terminal\\LojaVirtual\\LojaVirtual.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Matheus\\Desktop\\LojaVirtual\\LojaVirtual\\LojaVirtual.csproj": {
+    "C:\\Users\\Ronaldo\\Desktop\\tfxpc-terminal\\LojaVirtual\\LojaVirtual.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Matheus\\Desktop\\LojaVirtual\\LojaVirtual\\LojaVirtual.csproj",
+        "projectUniqueName": "C:\\Users\\Ronaldo\\Desktop\\tfxpc-terminal\\LojaVirtual\\LojaVirtual.csproj",
         "projectName": "LojaVirtual",
-        "projectPath": "C:\\Users\\Matheus\\Desktop\\LojaVirtual\\LojaVirtual\\LojaVirtual.csproj",
-        "packagesPath": "C:\\Users\\Matheus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Matheus\\Desktop\\LojaVirtual\\LojaVirtual\\obj\\",
+        "projectPath": "C:\\Users\\Ronaldo\\Desktop\\tfxpc-terminal\\LojaVirtual\\LojaVirtual.csproj",
+        "packagesPath": "C:\\Users\\Ronaldo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Ronaldo\\Desktop\\tfxpc-terminal\\LojaVirtual\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Matheus\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Ronaldo\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -32,6 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -43,7 +48,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -52,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
