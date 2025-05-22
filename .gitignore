@@ -1,0 +1,24 @@
+# Build results
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
+
+# User-specific files
+*.user
+*.suo
+*.userprefs
+
+# Visual Studio
+.vs/
+
+# Mac/Linux
+.DS_Store
+*.swp
+
+# Logs
+*.log
+
+# Rider
+.idea/
