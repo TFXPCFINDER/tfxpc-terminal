@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Matheus\\Desktop\\LojaVirtual\\lojavirtual\\LojaVirtual.csproj": {}
+    "C:\\Users\\Matheus\\Desktop\\LojaVirtual\\LojaVirtual\\LojaVirtual.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Matheus\\Desktop\\LojaVirtual\\lojavirtual\\LojaVirtual.csproj": {
+    "C:\\Users\\Matheus\\Desktop\\LojaVirtual\\LojaVirtual\\LojaVirtual.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Matheus\\Desktop\\LojaVirtual\\lojavirtual\\LojaVirtual.csproj",
+        "projectUniqueName": "C:\\Users\\Matheus\\Desktop\\LojaVirtual\\LojaVirtual\\LojaVirtual.csproj",
         "projectName": "LojaVirtual",
-        "projectPath": "C:\\Users\\Matheus\\Desktop\\LojaVirtual\\lojavirtual\\LojaVirtual.csproj",
+        "projectPath": "C:\\Users\\Matheus\\Desktop\\LojaVirtual\\LojaVirtual\\LojaVirtual.csproj",
         "packagesPath": "C:\\Users\\Matheus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Matheus\\Desktop\\LojaVirtual\\lojavirtual\\obj\\",
+        "outputPath": "C:\\Users\\Matheus\\Desktop\\LojaVirtual\\LojaVirtual\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Matheus\\AppData\\Roaming\\NuGet\\NuGet.Config"
