@@ -8,7 +8,6 @@ C:\Users\Matheus\Desktop\LojaVirtual\lojavirtual\bin\Debug\net5.0\LojaVirtual.de
 C:\Users\Matheus\Desktop\LojaVirtual\lojavirtual\bin\Debug\net5.0\LojaVirtual.runtimeconfig.json
 C:\Users\Matheus\Desktop\LojaVirtual\lojavirtual\bin\Debug\net5.0\LojaVirtual.runtimeconfig.dev.json
 C:\Users\Matheus\Desktop\LojaVirtual\lojavirtual\bin\Debug\net5.0\LojaVirtual.dll
-C:\Users\Matheus\Desktop\LojaVirtual\lojavirtual\bin\Debug\net5.0\ref\LojaVirtual.dll
 C:\Users\Matheus\Desktop\LojaVirtual\lojavirtual\bin\Debug\net5.0\LojaVirtual.pdb
 C:\Users\Matheus\Desktop\LojaVirtual\lojavirtual\obj\Debug\net5.0\LojaVirtual.dll
 C:\Users\Matheus\Desktop\LojaVirtual\lojavirtual\obj\Debug\net5.0\ref\LojaVirtual.dll
@@ -31,3 +30,5 @@ C:\Users\Ronaldo\Desktop\tfxpc-terminal\LojaVirtual\obj\Debug\net5.0\refint\Loja
 C:\Users\Ronaldo\Desktop\tfxpc-terminal\LojaVirtual\obj\Debug\net5.0\LojaVirtual.pdb
 C:\Users\Ronaldo\Desktop\tfxpc-terminal\LojaVirtual\obj\Debug\net5.0\LojaVirtual.genruntimeconfig.cache
 C:\Users\Ronaldo\Desktop\tfxpc-terminal\LojaVirtual\obj\Debug\net5.0\ref\LojaVirtual.dll
+C:\Users\Matheus\Desktop\LojaVirtual\lojavirtual\obj\Debug\net5.0\LojaVirtual.sourcelink.json
+C:\Users\Matheus\Desktop\LojaVirtual\lojavirtual\obj\Debug\net5.0\refint\LojaVirtual.dll
