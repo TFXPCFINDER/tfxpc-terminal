@@ -1,0 +1,6 @@
+@TfxPcApi_HostAddress = http://localhost:5229
+
+GET {{TfxPcApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
