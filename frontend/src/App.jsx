@@ -1,7 +1,8 @@
 function App() {
   return (
     <div>
-      <h1>TfxPC Loja Virtual</h1>
+      <h1>TFX_PC Loja Virtual</h1>
+      <h2>Em construção...</h2>
     </div>
   );
 }
