@@ -15,4 +15,5 @@ A integração do C# está sendo feita com o front-end em react usando ASP.NET C
 ## Tecnologias
 
 - C# (.NET 6+)
-- Console App (modo texto)
+- ASP.NET Core
+- ReactJS
