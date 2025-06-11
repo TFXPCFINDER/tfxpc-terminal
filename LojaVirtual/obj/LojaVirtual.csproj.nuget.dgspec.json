@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ronaldo\\Desktop\\tfxpc-terminal\\LojaVirtual\\LojaVirtual.csproj": {}
+    "C:\\Users\\Matheus\\Desktop\\LojaVirtual\\LojaVirtual\\LojaVirtual.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ronaldo\\Desktop\\tfxpc-terminal\\LojaVirtual\\LojaVirtual.csproj": {
+    "C:\\Users\\Matheus\\Desktop\\LojaVirtual\\LojaVirtual\\LojaVirtual.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ronaldo\\Desktop\\tfxpc-terminal\\LojaVirtual\\LojaVirtual.csproj",
+        "projectUniqueName": "C:\\Users\\Matheus\\Desktop\\LojaVirtual\\LojaVirtual\\LojaVirtual.csproj",
         "projectName": "LojaVirtual",
-        "projectPath": "C:\\Users\\Ronaldo\\Desktop\\tfxpc-terminal\\LojaVirtual\\LojaVirtual.csproj",
-        "packagesPath": "C:\\Users\\Ronaldo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ronaldo\\Desktop\\tfxpc-terminal\\LojaVirtual\\obj\\",
+        "projectPath": "C:\\Users\\Matheus\\Desktop\\LojaVirtual\\LojaVirtual\\LojaVirtual.csproj",
+        "packagesPath": "C:\\Users\\Matheus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Matheus\\Desktop\\LojaVirtual\\LojaVirtual\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Ronaldo\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Matheus\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -58,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.411\\RuntimeIdentifierGraph.json"
         }
       }
     }
