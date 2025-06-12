@@ -1,51 +1,47 @@
+using System.Collections.Generic;
 using TfxPcApi.Models;
 
-namespace TfxPcApi.Services;
-
-public class PedidoService
+namespace TfxPcApi.Services
 {
-    private readonly List<Pedido> _pedidos = new();
-    private int _proximoId = 1;
-
-    private readonly ProdutoService _produtoService;
-
-    public PedidoService(ProdutoService produtoService)
+    public class PedidoService
     {
-        _produtoService = produtoService;
-    }
+        private static List<Pedido> pedidos = new();
+        private static int proximoId = 1;
+        private readonly ProdutoService _produtoService;
+        private readonly UsuarioService _usuarioService;
 
-    public Pedido? CriarPedido(int usuarioId, List<ItemPedido> itens)
-    {
-        // Validar e atualizar estoque
-        foreach (var item in itens)
+        public PedidoService(ProdutoService produtoService, UsuarioService usuarioService)
         {
-            var produto = _produtoService.BuscarPorId(item.ProdutoId);
-            if (produto == null || produto.Estoque < item.Quantidade)
-                return null;
-
-            _produtoService.AtualizarEstoque(item.ProdutoId, item.Quantidade);
-            item.PrecoUnitario = produto.Preco; // Garante o valor correto
+            _produtoService = produtoService;
+            _usuarioService = usuarioService;
         }
 
-        var pedido = new Pedido
+        public bool RealizarPedido(Pedido pedido)
         {
-            Id = _proximoId++,
-            UsuarioId = usuarioId,
-            Itens = itens,
-            DataPedido = DateTime.Now
-        };
+            var usuario = _usuarioService.ObterPorId(pedido.UsuarioId);
+            if (usuario == null)
+                return false;
 
-        _pedidos.Add(pedido);
-        return pedido;
-    }
+            foreach (var item in pedido.Itens)
+            {
+                var produto = _produtoService.ObterPorId(item.ProdutoId);
+                if (produto == null || produto.Estoque < item.Quantidade)
+                    return false;
+            }
 
-    public List<Pedido> ListarPedidosPorUsuario(int usuarioId)
-    {
-        return _pedidos.Where(p => p.UsuarioId == usuarioId).ToList();
-    }
+            foreach (var item in pedido.Itens)
+            {
+                _produtoService.AtualizarEstoque(item.ProdutoId, item.Quantidade);
+            }
 
-    public Pedido? BuscarPorId(int id)
-    {
-        return _pedidos.FirstOrDefault(p => p.Id == id);
+            pedido.Id = proximoId++;
+            pedidos.Add(pedido);
+            return true;
+        }
+
+        public List<Pedido> ListarPorUsuario(int usuarioId)
+        {
+            return pedidos.Where(p => p.UsuarioId == usuarioId).ToList();
+        }
     }
 }

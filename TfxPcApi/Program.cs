@@ -1,49 +1,46 @@
 using TfxPcApi.Services;
+using TfxPcApi.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+// Serviços
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddSingleton<ProdutoService>();
-builder.Services.AddSingleton<UsuarioService>();
-builder.Services.AddSingleton<PedidoService>();
+builder.Services.AddScoped<ProdutoService>();
+builder.Services.AddScoped<UsuarioService>();
+builder.Services.AddScoped<PedidoService>();
+
+// CORS liberado para permitir acesso do React
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("Liberado", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
+
+builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Swagger
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+// Ativar CORS antes da autorização
+app.UseCors("Liberado");
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+// app.UseHttpsRedirection(); // Desabilitado por problemas com porta
+app.UseAuthorization();
 
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast")
-.WithOpenApi();
+// Mapear endpoints
+ProdutoEndpoints.Map(app);
+UsuarioEndpoints.Map(app);
+PedidoEndpoints.Map(app);
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

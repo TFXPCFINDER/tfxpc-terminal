@@ -1,26 +1,27 @@
+using System.Collections.Generic;
 using TfxPcApi.Models;
 
-namespace TfxPcApi.Services;
-
-public class UsuarioService
+namespace TfxPcApi.Services
 {
-    private readonly List<Usuario> _usuarios = new();
-    private int _proximoId = 1;
-
-    public Usuario Cadastrar(Usuario usuario)
+    public class UsuarioService
     {
-        usuario.Id = _proximoId++;
-        _usuarios.Add(usuario);
-        return usuario;
-    }
+        private static List<Usuario> usuarios = new();
+        private static int proximoId = 1;
 
-    public Usuario? Login(string email, string senha)
-    {
-        return _usuarios.FirstOrDefault(u => u.Email == email && u.Senha == senha);
-    }
+        public void Cadastrar(Usuario usuario)
+        {
+            usuario.Id = proximoId++;
+            usuarios.Add(usuario);
+        }
 
-    public Usuario? BuscarPorId(int id)
-    {
-        return _usuarios.FirstOrDefault(u => u.Id == id);
+        public Usuario? Login(string email, string senha)
+        {
+            return usuarios.FirstOrDefault(u => u.Email == email && u.Senha == senha);
+        }
+
+        public Usuario? ObterPorId(int id)
+        {
+            return usuarios.FirstOrDefault(u => u.Id == id);
+        }
     }
 }

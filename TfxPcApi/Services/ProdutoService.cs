@@ -1,43 +1,67 @@
+using System.Collections.Generic;
 using TfxPcApi.Models;
 
-namespace TfxPcApi.Services;
-
-public class ProdutoService
+namespace TfxPcApi.Services
 {
-    private readonly List<Produto> _produtos = new();
-    private int _proximoId = 1;
-
-    public List<Produto> ListarTodos()
+    public class ProdutoService
     {
-        return _produtos;
-    }
+        private static List<Produto> produtos = new();
+        private static int proximoId = 1;
 
-    public Produto? BuscarPorId(int id)
-    {
-        return _produtos.FirstOrDefault(p => p.Id == id);
-    }
+        public ProdutoService()
+        {
+            // Produtos iniciais (carregados ao iniciar o serviço)
+            if (produtos.Count == 0)
+            {
+                Adicionar(new Produto
+                {
+                    Nome = "PC Gamer RTX",
+                    Descricao = "Ryzen 5, 16GB RAM, RTX 3060",
+                    Preco = 4800,
+                    Estoque = 10
+                });
 
-    public Produto Adicionar(Produto produto)
-    {
-        produto.Id = _proximoId++;
-        _produtos.Add(produto);
-        return produto;
-    }
+                Adicionar(new Produto
+                {
+                    Nome = "Notebook Intel i7",
+                    Descricao = "i7, 16GB RAM, SSD 512GB",
+                    Preco = 3700,
+                    Estoque = 5
+                });
 
-    public bool Remover(int id)
-    {
-        var produto = BuscarPorId(id);
-        if (produto == null) return false;
-        _produtos.Remove(produto);
-        return true;
-    }
+                Adicionar(new Produto
+                {
+                    Nome = "Monitor 144Hz",
+                    Descricao = "27 polegadas Full HD",
+                    Preco = 1200,
+                    Estoque = 8
+                });
+            }
+        }
 
-    public bool AtualizarEstoque(int id, int quantidade)
-    {
-        var produto = BuscarPorId(id);
-        if (produto == null || produto.Estoque < quantidade) return false;
+        public void Adicionar(Produto produto)
+        {
+            produto.Id = proximoId++;
+            produtos.Add(produto);
+        }
 
-        produto.Estoque -= quantidade;
-        return true;
+        public List<Produto> Listar()
+        {
+            return produtos;
+        }
+
+        public Produto? ObterPorId(int id)
+        {
+            return produtos.FirstOrDefault(p => p.Id == id);
+        }
+
+        public void AtualizarEstoque(int produtoId, int quantidadeVendida)
+        {
+            var produto = ObterPorId(produtoId);
+            if (produto != null)
+            {
+                produto.Estoque -= quantidadeVendida;
+            }
+        }
     }
 }

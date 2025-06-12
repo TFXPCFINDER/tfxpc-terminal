@@ -2,34 +2,36 @@ using Microsoft.AspNetCore.Mvc;
 using TfxPcApi.Models;
 using TfxPcApi.Services;
 
-namespace TfxPcApi.Controllers;
-
-[ApiController]
-[Route("pedidos")]
-public class PedidoController : ControllerBase
+namespace TfxPcApi.Controllers
 {
-    private readonly PedidoService _pedidoService;
-
-    public PedidoController(PedidoService pedidoService)
+    [ApiController]
+    [Route("[controller]")]
+    public class PedidoController : ControllerBase
     {
-        _pedidoService = pedidoService;
-    }
+        private readonly PedidoService _pedidoService;
 
-    [HttpPost]
-    public IActionResult CriarPedido([FromBody] PedidoRequest request)
-    {
-        var pedido = _pedidoService.CriarPedido(request.UsuarioId, request.Itens);
-        if (pedido == null)
+        public PedidoController(PedidoService pedidoService)
         {
-            return BadRequest("Erro ao criar pedido. Verifique o estoque e IDs dos produtos.");
+            _pedidoService = pedidoService;
         }
-        return Ok(pedido);
-    }
 
-    [HttpGet("usuario/{usuarioId}")]
-    public IActionResult ListarPorUsuario(int usuarioId)
-    {
-        var pedidos = _pedidoService.ListarPedidosPorUsuario(usuarioId);
-        return Ok(pedidos);
+        [HttpPost]
+        public IActionResult RealizarPedido(Pedido pedido)
+        {
+            var sucesso = _pedidoService.RealizarPedido(pedido);
+            if (!sucesso)
+            {
+                return BadRequest("Não foi possível realizar o pedido. Verifique os dados.");
+            }
+
+            return Ok("Pedido realizado com sucesso.");
+        }
+
+        [HttpGet("{usuarioId}")]
+        public IActionResult ListarPorUsuario(int usuarioId)
+        {
+            var pedidos = _pedidoService.ListarPorUsuario(usuarioId);
+            return Ok(pedidos);
+        }
     }
 }
