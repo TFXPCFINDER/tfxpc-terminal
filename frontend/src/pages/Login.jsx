@@ -13,7 +13,7 @@ function Login() {
         senha,
       });
       alert('Login realizado! Usuário ID: ' + response.data.id);
-      localStorage.setItem('usuarioId', response.data.id);
+      localStorage.setItem('usuario', JSON.stringify(response.data));
     } catch (err) {
       console.error(err);
       alert('Falha no login');

@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useCart } from '../contexts/CartContext';
 
 function ProdutoList() {
   const [produtos, setProdutos] = useState([]);
+  const { adicionar } = useCart();
 
   useEffect(() => {
     axios.get('http://localhost:5229/produtos')
@@ -18,8 +20,11 @@ function ProdutoList() {
       ) : (
         <ul>
           {produtos.map(produto => (
-            <li key={produto.id}>
-              <strong>{produto.nome}</strong> - R$ {produto.preco.toFixed(2)}
+            <li key={produto.id} style={{ marginBottom: '20px' }}>
+              <strong>{produto.nome}</strong><br />
+              <em>{produto.descricao}</em><br />
+              Preço: R$ {produto.preco.toFixed(2)}<br />
+              <button onClick={() => adicionar(produto)}>Adicionar ao Carrinho</button>
             </li>
           ))}
         </ul>

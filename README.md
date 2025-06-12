@@ -4,12 +4,12 @@ Este é um projeto da loja virtual de computadores TFX_PC, desenvolvido como par
 
 ## Funcionalidades
 
-- Cadastro e login de usuários
-- Listagem de produtos
-- Carrinho de compras (adicionar, visualizar)
-- Finalização de pedidos com simulação de pagamento
-- Atualização automática de estoque
-- Histórico de pedidos por cliente
+✅ Login e cadastro
+✅ Listagem de produtos
+✅ Carrinho com total
+✅ Finalização de pedido
+✅ Histórico de pedidos
+✅ Logout
 
 ## Tecnologias
 

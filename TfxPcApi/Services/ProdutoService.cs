@@ -15,7 +15,7 @@ namespace TfxPcApi.Services
             {
                 Adicionar(new Produto
                 {
-                    Nome = "PC Gamer RTX",
+                    Nome = "1. PC Gamer RTX 3060",
                     Descricao = "Ryzen 5, 16GB RAM, RTX 3060",
                     Preco = 4800,
                     Estoque = 10
@@ -23,7 +23,7 @@ namespace TfxPcApi.Services
 
                 Adicionar(new Produto
                 {
-                    Nome = "Notebook Intel i7",
+                    Nome = "2. Notebook Intel i7",
                     Descricao = "i7, 16GB RAM, SSD 512GB",
                     Preco = 3700,
                     Estoque = 5
@@ -31,7 +31,7 @@ namespace TfxPcApi.Services
 
                 Adicionar(new Produto
                 {
-                    Nome = "Monitor 144Hz",
+                    Nome = "3. Monitor 144Hz",
                     Descricao = "27 polegadas Full HD",
                     Preco = 1200,
                     Estoque = 8
