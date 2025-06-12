@@ -15,26 +15,26 @@ namespace TfxPcApi.Services
             {
                 Adicionar(new Produto
                 {
-                    Nome = "1. PC Gamer RTX 3060",
-                    Descricao = "Ryzen 5, 16GB RAM, RTX 3060",
-                    Preco = 4800,
-                    Estoque = 10
-                });
-
-                Adicionar(new Produto
-                {
-                    Nome = "2. Notebook Intel i7",
-                    Descricao = "i7, 16GB RAM, SSD 512GB",
-                    Preco = 3700,
+                    Nome = "PC Gamer Ryzen 5 5600 + RTX 3060",
+                    Descricao = "Ryzen 5 5600, 16GB RAM, RTX 3060",
+                    Preco = 3600,
                     Estoque = 5
                 });
 
                 Adicionar(new Produto
                 {
-                    Nome = "3. Monitor 144Hz",
-                    Descricao = "27 polegadas Full HD",
-                    Preco = 1200,
-                    Estoque = 8
+                    Nome = "Notebook Gamer Dell G15",
+                    Descricao = "5530, i5-13450HX, RTX 3050, 16GB RAM, SSD 512GB",
+                    Preco = 5900,
+                    Estoque = 5
+                });
+
+                Adicionar(new Produto
+                {
+                    Nome = "Monitor Gamer AOC DESTINY 25pol 240Hz",
+                    Descricao = "0.5ms FreeSync Premium 25G3ZM",
+                    Preco = 1300,
+                    Estoque = 5
                 });
             }
         }

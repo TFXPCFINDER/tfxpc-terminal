@@ -35,6 +35,7 @@ function Pedidos() {
           {pedidos.map(pedido => (
             <li key={pedido.id} style={{ marginBottom: '20px' }}>
               <strong>Pedido #{pedido.id}</strong><br />
+              <em>Forma de Pagamento: {pedido.formaPagamento || 'Não informado'}</em><br />
               <ul>
                 {pedido.itens.map((item, i) => {
                   const produto = buscarProduto(item.produtoId);

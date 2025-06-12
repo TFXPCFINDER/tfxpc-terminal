@@ -16,17 +16,20 @@ namespace TfxPcApi.Services
             _usuarioService = usuarioService;
         }
 
-        public bool RealizarPedido(Pedido pedido)
+        public Pedido RealizarPedido(Pedido pedido)
         {
             var usuario = _usuarioService.ObterPorId(pedido.UsuarioId);
             if (usuario == null)
-                return false;
+                throw new Exception("Usuário não encontrado.");
 
             foreach (var item in pedido.Itens)
             {
                 var produto = _produtoService.ObterPorId(item.ProdutoId);
-                if (produto == null || produto.Estoque < item.Quantidade)
-                    return false;
+                if (produto == null)
+                    throw new Exception($"Produto ID {item.ProdutoId} não encontrado.");
+
+                if (produto.Estoque < item.Quantidade)
+                    throw new Exception($"Estoque insuficiente para o produto: {produto.Nome}");
             }
 
             foreach (var item in pedido.Itens)
@@ -36,7 +39,7 @@ namespace TfxPcApi.Services
 
             pedido.Id = proximoId++;
             pedidos.Add(pedido);
-            return true;
+            return pedido;
         }
 
         public List<Pedido> ListarPorUsuario(int usuarioId)
