@@ -6,14 +6,23 @@ import Cadastro from './pages/Cadastro';
 import Carrinho from './pages/Carrinho';
 import Pedidos from './pages/Pedidos';
 import Logout from './pages/Logout';
+import './App.css';
 
 function App() {
   return (
     <div style={{ padding: '20px' }}>
       <nav>
-        <Link to="/">Início</Link> | <Link to="/produtos">Produtos</Link> | <Link to="/carrinho">Carrinho</Link> | <Link to="/pedidos">Pedidos</Link> | <Link to="/login">Login</Link> | <Link to="/cadastro">Cadastro</Link> | <Link to="/logout">Logout</Link>
+        <img src="/logo.png" alt="TFXPC" className="logo" />
+        <div className="links">
+          <Link to="/">Início</Link>
+          <Link to="/produtos">Produtos</Link>
+          <Link to="/carrinho">Carrinho</Link>
+          <Link to="/pedidos">Pedidos</Link>
+          <Link to="/login">Login</Link>
+          <Link to="/cadastro">Cadastro</Link>
+          <Link to="/logout">Logout</Link>
+        </div>
       </nav>
-      <hr />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/produtos" element={<ProdutoList />} />
