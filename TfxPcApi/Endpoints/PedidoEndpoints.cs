@@ -11,11 +11,15 @@ namespace TfxPcApi.Endpoints
         {
             app.MapPost("/pedidos", (Pedido pedido, PedidoService service) =>
             {
-                var sucesso = service.RealizarPedido(pedido);
-                if (!sucesso)
-                    return Results.BadRequest("Estoque insuficiente ou usuário inválido");
-
-                return Results.Ok(pedido);
+                try
+                {
+                    var novoPedido = service.RealizarPedido(pedido);
+                    return Results.Created($"/pedidos/{novoPedido.Id}", novoPedido);
+                }
+                catch (Exception ex)
+                {
+                    return Results.BadRequest(ex.Message);
+                }
             });
 
             app.MapGet("/pedidos/{usuarioId}", (int usuarioId, PedidoService service) =>

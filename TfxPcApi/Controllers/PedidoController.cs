@@ -16,15 +16,17 @@ namespace TfxPcApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult RealizarPedido(Pedido pedido)
+        public IActionResult RealizarPedido([FromBody] Pedido pedido)
         {
-            var sucesso = _pedidoService.RealizarPedido(pedido);
-            if (!sucesso)
+            try
             {
-                return BadRequest("Não foi possível realizar o pedido. Verifique os dados.");
+                var novoPedido = _pedidoService.RealizarPedido(pedido);
+                return Created($"/pedidos/{novoPedido.Id}", novoPedido);
             }
-
-            return Ok("Pedido realizado com sucesso.");
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpGet("{usuarioId}")]
