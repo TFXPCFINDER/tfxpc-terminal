@@ -116,9 +116,9 @@ http://localhost:5173
 
 ## 📅 Desenvolvido por
 
-PUC Minas - Sistemas de Informação
-Matheus Amaral Lara
-Ronaldo Soares de Oliveira Junior
-Diogo Lamera dos Santos
-Max Augusto Faria Andrade
-Guilherme Nazareth Carabetti
+* PUC Minas - Sistemas de Informação
+* Matheus Amaral Lara
+* Ronaldo Soares de Oliveira Junior
+* Diogo Lamera dos Santos
+* Max Augusto Faria Andrade
+* Guilherme Nazareth Carabetti
